@@ -24,13 +24,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    //News模块控制器
-    public function actionNews()
-    {
-        return $this->render('news');
-    }
-
-
+    
     //test"helloworld"
     public function actionSay($message = 'Hello World!')
     {
