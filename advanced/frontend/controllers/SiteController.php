@@ -24,7 +24,13 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    
+    //News模块控制器
+    public function actionNews()
+    {
+        return $this->render('news');
+    }
+
+
     //test"helloworld"
     public function actionSay($message = 'Hello World!')
     {
@@ -168,6 +174,21 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+    public function actionDownload()
+    {
+        // 定义文件路径
+        $filePath = Yii::getAlias('@webroot/homework/homework.zip');
+        
+        // 检查文件是否存在
+        if (file_exists($filePath)) {
+            // 设置响应头，强制浏览器下载文件
+            Yii::$app->response->sendFile($filePath);
+        } else {
+            // 如果文件不存在，显示错误消息
+            Yii::$app->session->setFlash('error', '文件未找到');
+            return $this->redirect(['about/index']);
+        }
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
 
 use Yii;
 
@@ -9,8 +9,8 @@ use Yii;
  *
  * @property int $id
  * @property string $title
- * @property string $content
  * @property string|null $created_at
+ * @property string $url
  */
 class News extends \yii\db\ActiveRecord
 {
@@ -28,10 +28,9 @@ class News extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content'], 'required'],
-            [['content'], 'string'],
+            [['title', 'url'], 'required'],
             [['created_at'], 'safe'],
-            [['title'], 'string', 'max' => 255],
+            [['title', 'url'], 'string', 'max' => 255],
         ];
     }
 
@@ -43,8 +42,8 @@ class News extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Title',
-            'content' => 'Content',
             'created_at' => 'Created At',
+            'url' => 'Url',
         ];
     }
 }

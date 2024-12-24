@@ -11,6 +11,7 @@ use Yii;
  * @property string $title
  * @property string|null $description
  * @property string $url
+ * @property string|null $cover_image
  * @property string|null $created_at
  */
 class Video extends \yii\db\ActiveRecord
@@ -32,7 +33,7 @@ class Video extends \yii\db\ActiveRecord
             [['title', 'url'], 'required'],
             [['description'], 'string'],
             [['created_at'], 'safe'],
-            [['title', 'url'], 'string', 'max' => 255],
+            [['title', 'url', 'cover_image'], 'string', 'max' => 255],
         ];
     }
 
@@ -46,7 +47,13 @@ class Video extends \yii\db\ActiveRecord
             'title' => 'Title',
             'description' => 'Description',
             'url' => 'Url',
+            'cover_image' => 'Cover Image',
             'created_at' => 'Created At',
         ];
+    }
+    // 获取当前视频的点赞数
+    public function getLikeCount()
+    {
+        return VideoLike::find()->where(['video_id' => $this->id])->count();
     }
 }

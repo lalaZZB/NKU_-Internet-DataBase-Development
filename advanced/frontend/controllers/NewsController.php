@@ -1,7 +1,7 @@
 <?php
 namespace frontend\controllers;
 
-use app\models\News;
+use frontend\models\News;
 use yii\data\Pagination;
 use yii\web\Controller;
 
@@ -33,18 +33,15 @@ class NewsController extends Controller
     }
 
     // 新闻详情页
+    // 显示新闻详情页
     public function actionView($id)
     {
-        // 查找指定ID的新闻
         $news = News::findOne($id);
-
         if (!$news) {
-            throw new \yii\web\NotFoundHttpException('新闻不存在');
+            throw new NotFoundHttpException("新闻未找到");
         }
 
-        // 渲染视图
-        return $this->render('view', [
-            'news' => $news,
-        ]);
+        // 直接跳转到新闻的 URL
+        return $this->redirect($news->url);
     }
 }
