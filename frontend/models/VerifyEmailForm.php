@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Team:芹菜米饭队,NKU
+ * Coding by QinZebin 2212005
+ * This is the model of frontend.
+ */
 namespace frontend\models;
 
 use common\models\User;

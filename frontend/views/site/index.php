@@ -1,3 +1,8 @@
+/**
+ * Team:芹菜米饭队,NKU
+ * Coding by QinZebin 2212005
+ * This is the view of frontend.
+ */
 <div class="site-index">
 
     <!-- 轮播图 -->

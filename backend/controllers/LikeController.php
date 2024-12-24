@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team:芹菜米饭队,NKU
+ * Coding by QinZebin 2212005
+ * This is the controller of backend.
+ */
 namespace backend\controllers;
 
 use Yii;

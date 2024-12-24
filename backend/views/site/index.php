@@ -1,7 +1,11 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
-
+/**
+ * Team:芹菜米饭队,NKU
+ * Coding by QinZebin 2212005
+ * This is the views of backend.
+ */
 $this->title = '后台管理首页';
 ?>
 

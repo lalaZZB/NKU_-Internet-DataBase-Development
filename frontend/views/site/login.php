@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Team:芹菜米饭队,NKU
+ * Coding by QinZebin 2212005
+ * This is the view of frontend.
+ */
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \common\models\LoginForm */

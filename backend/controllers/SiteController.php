@@ -1,6 +1,10 @@
 <?php
 namespace backend\controllers;
-
+/**
+ * Team:芹菜米饭队,NKU
+ * Coding by QinZebin 2212005
+ * This is the controller of backend.
+ */
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
